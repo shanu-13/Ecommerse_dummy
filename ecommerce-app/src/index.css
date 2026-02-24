@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-fadeUp {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+  }
+
+  .animate-fadeUp.delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-fadeUp.delay-300 {
+    animation-delay: 0.4s;
+  }
+
+  .animate-slowZoom {
+    animation: slowZoom 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes fadeUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slowZoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+}
