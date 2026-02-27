@@ -1,26 +1,48 @@
-import React from "react";
-import { useCart } from "../../context/CartContext";
-function Navbar() {
-  const { cartCount } = useCart();
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="bg-white shadow-md px-8 py-4 flex justify-between items-center">
-      <h1 className="text-2xl font-bold text-gray-900">Shopsy</h1>
+    <nav className="fixed top-0 left-0 w-full z-50 
+                    bg-black/70 backdrop-blur-md 
+                    border-b border-white/10">
       
-      <ul className="flex gap-6 font-medium">
-        <li className="cursor-pointer hover:text-gray-900">Home</li>
-        <li className="cursor-pointer hover:text-gray-900">Shop</li>
-        <li className="relative cursor-pointer hover:text-gray-900">
-          Cart
-          {cartCount > 0 && (
-            <span className="absolute -top-2 -right-4 bg-red-600 text-white text-xs px-2 py-1 rounded-full">
-              {cartCount}
-            </span>
-          )}
-        </li>
-        <li className="cursor-pointer hover:text-gray-900">Login</li>
-      </ul>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+        
+        {/* Logo */}
+        <h1 className="text-white text-lg sm:text-xl font-bold tracking-wider">
+          ECOMSHOP
+        </h1>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-8 text-white text-sm uppercase">
+          <a href="/" className="hover:text-red-500 transition">Home</a>
+          <a href="/shop" className="hover:text-red-500 transition">Shop</a>
+          <a href="/reviews" className="hover:text-red-500 transition">Favourites</a>
+          <a href="/cart" className="hover:text-red-500 transition">Cart</a>
+          <a href="/login" className="hover:text-red-500 transition">Login</a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden text-white">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-black/95 backdrop-blur-md px-6 py-6 space-y-6 text-white text-sm uppercase">
+          <a href="/" className="block hover:text-red-500 transition">Home</a>
+          <a href="/shop" className="block hover:text-red-500 transition">Shop</a>
+          <a href="/reviews" className="block hover:text-red-500 transition">Reviews</a>
+          <a href="/cart" className="block hover:text-red-500 transition">Cart</a>
+          <a href="/login" className="block hover:text-red-500 transition">Login</a>
+        </div>
+      )}
     </nav>
   );
 }
-
-export default Navbar;

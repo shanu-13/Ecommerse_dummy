@@ -41,7 +41,7 @@ function ProductCarousel() {
   ];
 
   return (
-    <div className="w-full h-[90vh]">
+    <div className="w-full  h-screen">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
@@ -52,7 +52,7 @@ function ProductCarousel() {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="relative w-full h-[90vh] overflow-hidden">
+            <div className="relative w-full  h-screen overflow-hidden">
 
               {/* Image or Video */}
               {slide.type === "image" ? (
@@ -71,7 +71,7 @@ function ProductCarousel() {
                 />
               )}
 
-              {/* Dark Gradient Overlay */}
+              {/* Dark Gradient Overlay */}NIKE AIR MAX
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70 flex items-center">
                 
                 <div className="max-w-6xl mx-auto px-8 text-white">
@@ -84,7 +84,7 @@ function ProductCarousel() {
                     {slide.description}
                   </p>
 
-                  <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300 px-15 py-5 rounded-lg text-lg font-semibold shadow-lg animate-fadeUp delay-300">
+                  <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300 px-8 py-3 rounded-lg text-lg font-semibold shadow-lg animate-fadeUp delay-300">
                     Shop Now
                   </button>
 

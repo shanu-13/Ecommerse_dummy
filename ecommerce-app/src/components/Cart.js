@@ -1,5 +1,6 @@
 import React from "react";
-import { useCart } from "../../context/CartContext";
+// Cart context resides at src/context
+import { useCart } from "../context/CartContext";
 
 function Cart() {
   const {
@@ -54,7 +55,6 @@ function Cart() {
               </button>
             </div>
           ))}
-<Home />
           <div className="text-right mt-8">
             <h3 className="text-xl font-bold">
               Total: ${cartTotal.toFixed(2)}
