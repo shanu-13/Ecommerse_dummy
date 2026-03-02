@@ -18,11 +18,11 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 text-white text-sm uppercase">
-          <a href="/" className="hover:text-red-500 transition">Home</a>
-          <a href="/shop" className="hover:text-red-500 transition">Shop</a>
-          <a href="/reviews" className="hover:text-red-500 transition">Favourites</a>
-          <a href="/cart" className="hover:text-red-500 transition">Cart</a>
-          <a href="/login" className="hover:text-red-500 transition">Login</a>
+          <a href="/" className="hover:text-gray-500 transition">Home</a>
+          <a href="/shop" className="hover:text-gray-500 transition">Shop</a>
+          <a href="/reviews" className="hover:text-gray-500 transition">Favourites</a>
+          <a href="/cart" className="hover:text-gray-500 transition">Cart</a>
+          <a href="/login" className="hover:text-gray-500 transition">Login</a>
         </div>
 
         {/* Mobile Menu Button */}

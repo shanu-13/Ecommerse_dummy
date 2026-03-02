@@ -84,7 +84,7 @@ function ProductCarousel() {
                     {slide.description}
                   </p>
 
-                  <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300 px-8 py-3 rounded-lg text-lg font-semibold shadow-lg animate-fadeUp delay-300">
+                  <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300 px-8 py-3 rounded-lg text-lg font-semibold shadow-lg animate-fadeUp delay-300 ">
                     Shop Now
                   </button>
 
